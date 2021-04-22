@@ -15,15 +15,15 @@ import java.util.List;
 
 public class ImageAdapter extends BaseAdapter {
     private List<Bitmap> mThumbIds; //Битмапы картинок
-    private Context mContext; //Контекст
-    private int imageWidth, imageHeight; //Размеры картинки
+    private Context mContext;
+    private int imageWidth, imageHeight;
 
     public ImageAdapter(List<Bitmap> mThumbIds, Context mContext) {
         this.mThumbIds = mThumbIds;
         this.mContext = mContext;
         Display display = ((Activity) mContext).getWindowManager().getDefaultDisplay();
         Point size = new Point();
-        display.getSize(size); //Получаем размеры экрана в пикселях
+        display.getSize(size);
         this.imageWidth = size.x;
         this.imageHeight = 400;
     }

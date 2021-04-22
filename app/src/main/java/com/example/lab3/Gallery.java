@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.io.FileNotFoundException;
@@ -54,7 +52,7 @@ public class Gallery extends Fragment
                     FragmentManager fm = getActivity().getSupportFragmentManager(); //Получаем фрагмент редактирования
                     Fragment fragment = fm.findFragmentById(R.id.TopScreenFragment);
 
-                    Bitmap image = ((topFragment) fragment).getImage(); //Получаем выбранное фото
+                    Bitmap image = ((TopFragment) fragment).getImage(); //Получаем выбранное фото
 
                     if(image != null){ //Если битмап валидный, т.е. не была нажата кнопка закрытия режима
                         mImageBitmaps.add(0, image); //Добавляем новую картинку в список
@@ -84,7 +82,7 @@ public class Gallery extends Fragment
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream); //Получаем битмап выбранной картинки
 
                 FragmentManager fm = getActivity().getSupportFragmentManager(); //Создаем фрагмент
-                Fragment fragment = new topFragment(0,0, bitmap);
+                Fragment fragment = new TopFragment(bitmap);
                 FragmentTransaction ft = fm.beginTransaction();
 
                 ft.add(R.id.TopScreenFragment, fragment); //Добавляем фрагмент в Activity

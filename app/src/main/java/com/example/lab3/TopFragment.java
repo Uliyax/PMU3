@@ -25,16 +25,14 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class topFragment extends Fragment
+public class TopFragment extends Fragment
 {
 
     private GridView gridView; //GridView в фрагменте
     private Bitmap currentImage; //Текущая картинка
     private View view; //view фрагмента
 
-    public topFragment(int width, int height, Bitmap imageBitmap){
-        //this.fragmentWidth = width;
-        //this.fragmentHeight = height;
+    public TopFragment(Bitmap imageBitmap){
         this.currentImage = imageBitmap; //Устанавливаем первоначальную картинку
     }
 
